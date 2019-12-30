@@ -1,0 +1,21 @@
+
+*.ipch
+*.db
+*.db-shm
+*.opendb
+*.db-wal
+*.txt
+Dear ImgUI/imgui-1.74/examples/example_glfw_vulkan/CMakeLists-1
+*.tlog
+*.obj
+*.log
+*.idb
+*.pdb
+*.exe
+*.vsp
+*.dll
+*.exp
+*.lib
+*.filters
+*.user
+*.ilk
