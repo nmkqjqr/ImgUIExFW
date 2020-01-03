@@ -1,5 +1,4 @@
-﻿#include "framework.h"
-#include "IMGUIDemo.h"
+﻿#include "IMGUIDemo.h"
 #include <string>
 
 #define MAX_LOADSTRING 100

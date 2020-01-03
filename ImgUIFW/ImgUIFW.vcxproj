@@ -97,6 +97,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>D:\Cpp\boost_1_72_0\boost_1_72_0\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -104,7 +105,7 @@
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <AdditionalDependencies>D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\lib-vc2019\glfw3dll.lib;F:\VulkanSDK\1.1.130.0\Lib32\vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\lib-vc2019\glfw3dll.lib;F:\VulkanSDK\1.1.130.0\Lib32\vulkan-1.lib;D:\Cpp\boost_1_72_0\boost_1_72_0\lib32\vc14_x86\lib\boost_container-vc142-mt-x32-1_72.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -172,6 +173,12 @@
     <ClInclude Include="..\Dear ImgUI\imgui-1.74\imstb_textedit.h" />
     <ClInclude Include="..\Dear ImgUI\imgui-1.74\imstb_truetype.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GCell.h" />
+    <ClInclude Include="GColumn.h" />
+    <ClInclude Include="GRow.h" />
+    <ClInclude Include="GTable.h" />
+    <ClInclude Include="GTableFW.h" />
+    <ClInclude Include="Property.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Dear ImgUI\imgui-1.74\examples\imgui_impl_glfw.cpp" />
@@ -180,7 +187,11 @@
     <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_demo.cpp" />
     <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_draw.cpp" />
     <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_widgets.cpp" />
+    <ClCompile Include="GCell.cpp" />
+    <ClCompile Include="GColumn.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="GRow.cpp" />
+    <ClCompile Include="GTable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="imgui.natvis" />
