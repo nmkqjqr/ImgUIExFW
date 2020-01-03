@@ -1,6 +1,8 @@
 ﻿#include "IMGUIDemo.h"
 #include <string>
+#include "GTableTest.h"
 
+using namespace Test;
 #define MAX_LOADSTRING 100
 
 static VkAllocationCallbacks* g_Allocator = NULL;
@@ -462,6 +464,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	{
 	}
 
+	GTableTest* loTbTest = new GTableTest();	
 	while (!glfwWindowShouldClose(window))
 	{
 		// Poll and handle events (inputs, window resize, etc.)
@@ -488,6 +491,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		if (show_demo_window)
 			ImGui::ShowDemoWindow(&show_demo_window);
 
+		loTbTest->ShowWindow();
 		// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
 		{
 			static float f = 0.0f;

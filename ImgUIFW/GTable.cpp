@@ -124,6 +124,7 @@ namespace Grid
 
 	void GTable::Initial()
 	{
+		this->Name = new property<GTable, string, READ_WRITE>();
 		Name->setContainer(this);
 		Name->setter(&GTable::setName);
 		Name->getter(&GTable::getName);

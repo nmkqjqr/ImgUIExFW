@@ -60,9 +60,11 @@ namespace Grid
 	{
 		this->table = nullptr;
 
+		this->Table = new property<GRow, GTable*, READ_ONLY>();
 		Table->setContainer(this);
 		Table->getter(&GRow::getTable);
 
+		this->Index = new property<GRow, int, READ_ONLY>();
 		Index->setContainer(this);
 		Index->getter(&GRow::getIndex);
 	}

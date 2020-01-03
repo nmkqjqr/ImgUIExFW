@@ -42,7 +42,7 @@ namespace Grid
 		property<GCell, GRow*, READ_ONLY>* Row;
 		property<GCell, GColumn*, READ_ONLY>* Column;
 		property<GCell, string, READ_WRITE>* Value;
-		property<GCell, string, READ_WRITE>* ContrastValue;
+		property<GCell, string, READ_WRITE>* ContrastValue;		
 	};
 }
 

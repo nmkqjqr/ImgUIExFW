@@ -26,18 +26,21 @@ namespace Grid
 		this->column = nullptr;
 		this->row = nullptr;
 
+		this->Value = new property<GCell, string, READ_WRITE>();
 		Value->setContainer(this);
 		Value->setter(&GCell::setValue);
 		Value->getter(&GCell::getValue);
 
-
+		this->ContrastValue = new property<GCell, string, READ_WRITE>();
 		ContrastValue->setContainer(this);
 		ContrastValue->setter(&GCell::setContrastValue);
 		ContrastValue->getter(&GCell::getContrastValue);
 
+		this->Row = new property<GCell, GRow*, READ_ONLY>();
 		Row->setContainer(this);
 		Row->getter(&GCell::getRow);
 
+		this->Column = new property<GCell, GColumn*, READ_ONLY>();
 		Column->setContainer(this);
 		Column->getter(&GCell::getColumn);
 	}

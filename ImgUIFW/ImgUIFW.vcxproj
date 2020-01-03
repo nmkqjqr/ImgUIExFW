@@ -197,6 +197,7 @@
     <Natvis Include="imgui.natvis" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
     <None Include="ImgUIFW-Vulkan.def" />
   </ItemGroup>
   <ItemGroup>

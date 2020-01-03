@@ -35,7 +35,7 @@ namespace Test
 		string connection;
 		string tableName;
 		session* SQL;
-		map<string, bool>* Columns;
+		map<string, bool>* Tables;
 
 		void setConnection(string pcConnection);
 		string getConnection() const;

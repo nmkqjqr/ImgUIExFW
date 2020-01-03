@@ -31,7 +31,7 @@ namespace Grid
 		property<GRow, int, READ_ONLY>* Index;
 		IMGUI_API void Insert(GCell* poCell, int piIndex);
 		IMGUI_API void Add(GCell* poCell);
-		IMGUI_API void Remove(GCell* poCell);
+		IMGUI_API void Remove(GCell* poCell);		
 	};
 }
 
