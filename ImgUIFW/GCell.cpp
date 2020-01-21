@@ -14,12 +14,22 @@ namespace Grid
 
 	GCell::~GCell()
 	{
-		this->setRow(nullptr);
-		this->setColumn(nullptr);
-		delete this->Row;
-		delete this->Column;
-		delete	this->ContrastValue;
-		delete	this->Value;
+		if ((this->row) != 0 || (this->column) != 0)
+		{
+			this->setRow(nullptr);
+			this->setColumn(nullptr);
+			delete this->Row;
+			delete this->Column;
+
+			this->value.clear();
+			this->value.~basic_string();
+
+			this->contrastValue.clear();
+			this->contrastValue.~basic_string();
+
+			delete this->ContrastValue;
+			delete	this->Value;
+		}
 	}
 
 	void GCell::Initial(string const pcText)

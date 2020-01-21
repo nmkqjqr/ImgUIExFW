@@ -16,6 +16,7 @@ namespace Grid
 	GColumn::~GColumn()
 	{
 		this->setTable(nullptr);
+		this->name.clear();
 	}
 
 	GTable* GColumn::getTable() const

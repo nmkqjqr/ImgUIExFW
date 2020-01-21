@@ -13,6 +13,7 @@ namespace Grid
 	{
 		this->ClearAll();
 		this->setTable(nullptr);
+		delete this->Cells;
 	}
 
 	GTable* GRow::getTable() const
@@ -140,19 +141,22 @@ namespace Grid
 
 	void GRow::ClearAll()
 	{
-		vector<GCell*>::iterator loCell = this->Cells->begin();
-		while (loCell != this->Cells->end())
+		if (this->Cells)
 		{
-			GCell* loGCell = *loCell;
-			if (&loCell)
+			vector<GCell*>::iterator loCell = this->Cells->begin();
+			while (loCell != this->Cells->end())
 			{
-				loGCell->~GCell();
+				GCell*& loGCell = *loCell;
+				loCell++;
+				if (&loCell)
+				{
+					delete loGCell;
+				}
 			}
 
-			loCell++;
+			this->Cells->clear();
 		}
 
-		this->Cells->clear();
 	}
 }
 

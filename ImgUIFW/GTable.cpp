@@ -12,8 +12,7 @@ namespace Grid
 
 	GTable::~GTable()
 	{
-		this->Rows->clear();
-		this->Columns->clear();
+		this->ClearAll();
 		delete this->Rows;
 		delete this->Columns;
 	}
@@ -139,20 +138,32 @@ namespace Grid
 
 	void GTable::ClearAll()
 	{
-		for (vector<GRow*>::iterator loRow = this->Rows->begin(); loRow != this->Rows->end(); loRow++)
+		if (this->Rows)
 		{
-			GRow* loTRow = *loRow;
-			loTRow->~GRow();
+			vector<GRow*>::iterator loRow = this->Rows->begin();
+			while (loRow != this->Rows->end())
+			{
+				GRow*& loTRow = *loRow;
+				loRow++;
+				delete loTRow;
+			}
+
+			this->Rows->clear();
 		}
-		this->Rows->clear();
 
-
-		for (vector<GColumn*>::iterator loColumn = this->Columns->begin(); loColumn != this->Columns->end(); loColumn++)
+		if (this->Columns)
 		{
-			GColumn* loGColumn = *loColumn;
-			loGColumn->~GColumn();
+			vector<GColumn*>::iterator loColumn = this->Columns->begin();
+			while (loColumn != this->Columns->end())
+			{
+				GColumn*& loGColumn = *loColumn;
+				loColumn++;
+				delete loGColumn;
+			}
+
+			this->Columns->clear();
 		}
-		this->Columns->clear();
+
 	}
 }
 

@@ -262,7 +262,7 @@ namespace Test
 						{
 							const row& loTempRow = (*loItRow);
 							GRow* loGRow = CreateRowBySOCIrow(loTempRow);
-							this->_Table->Insert(loGRow, INT32_MAX);
+							/*this->_Table->Insert(loGRow, INT32_MAX);*/
 						}
 					}
 				}
