@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Cpp\GitHub\DatabaseOperation\include\sqlite;D:\Cpp\OracleLib\include;D:\Cpp\soil\src;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-1.74\examples;D:\Cpp\GitHub\DatabaseOperation\VS\include;D:\Cpp\GitHub\DatabaseOperation\src;F:\VulkanSDK\1.1.130.0\Include;D:\Cpp\GitHub\DatabaseOperation\include;D:\Cpp\GitHub\ImgUIExFW\ImgUIFW;D:\Cpp\GitHub\GLM\glm-0.9.9.6;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include\GLFW;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-1.74;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cpp\GitHub\DatabaseOperation\include\sqlite;D:\Cpp\OracleLib\include;D:\Cpp\soil\src;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-tables\examples;D:\Cpp\GitHub\DatabaseOperation\VS\include;D:\Cpp\GitHub\DatabaseOperation\src;F:\VulkanSDK\1.1.130.0\Include;D:\Cpp\GitHub\DatabaseOperation\include;D:\Cpp\GitHub\ImgUIExFW\ImgUIFW;D:\Cpp\GitHub\GLM\glm-0.9.9.6;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include\GLFW;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-tables;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -101,7 +101,8 @@
       <AdditionalDependencies>D:\Cpp\GitHub\ImgUIExFW\lib\Win32\ImgUIFW-Vulkan.lib;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\lib-vc2019\glfw3dll.lib;F:\VulkanSDK\1.1.130.0\Lib32\vulkan-1.lib;D:\Cpp\GitHub\ImgUIExFW\lib\Win32\SOIL.lib;D:\Cpp\GitHub\DatabaseOperation\lib\soci_core_4_0.lib;D:\Cpp\GitHub\DatabaseOperation\lib\soci_oracle\soci_oracle_4_0.lib;D:\Cpp\GitHub\DatabaseOperation\lib\soci_sqlite3\soci_sqlite3_4_0.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\lib-vc2019;D:\Cpp\GitHub\ImgUIExFW\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
-      <Profile>true</Profile>
+      <Profile>false</Profile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

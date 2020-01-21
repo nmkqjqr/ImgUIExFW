@@ -23,17 +23,17 @@ namespace Grid
 
 		void Initial(string const pcText);
 
-		string getValue() const;
-		void setValue(string pcValue);
+		IMGUI_API string getValue() const;
+		IMGUI_API void setValue(string pcValue);
 
-		string getContrastValue() const;
-		void setContrastValue(string pcValue);
+		IMGUI_API string getContrastValue() const;
+		IMGUI_API void setContrastValue(string pcValue);
 
-		GRow* getRow() const;
-		void setRow(GRow* poRow);
+		IMGUI_API GRow* getRow() const;
+		IMGUI_API void setRow(GRow* poRow);
 
-		GColumn* getColumn() const;
-		void setColumn(GColumn* poColumn);
+		IMGUI_API GColumn* getColumn() const;
+		IMGUI_API void setColumn(GColumn* poColumn);
 
 	public:
 		IMGUI_API GCell();
@@ -42,7 +42,7 @@ namespace Grid
 		property<GCell, GRow*, READ_ONLY>* Row;
 		property<GCell, GColumn*, READ_ONLY>* Column;
 		property<GCell, string, READ_WRITE>* Value;
-		property<GCell, string, READ_WRITE>* ContrastValue;		
+		property<GCell, string, READ_WRITE>* ContrastValue;
 	};
 }
 

@@ -23,13 +23,15 @@ namespace Grid
 		IMGUI_API GTable();
 		IMGUI_API ~GTable();
 		property<GTable, string, READ_WRITE>* Name;
-		vector<GRow*> Rows;
-		vector<GColumn*> Columns;
+		vector<GRow*>* Rows;
+		vector<GColumn*>* Columns;
 		IMGUI_API void Insert(GRow* poRow, int piIndex);
 		IMGUI_API void Remove(GRow* poRow);
 
 		IMGUI_API void Insert(GColumn* poColumn, int piIndex);
 		IMGUI_API void Remove(GColumn* poColumn);
+
+		IMGUI_API void ClearAll();
 	};
 
 #endif // !GTABLE_DEF	

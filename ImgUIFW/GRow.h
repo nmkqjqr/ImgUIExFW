@@ -26,12 +26,13 @@ namespace Grid
 	public:
 		IMGUI_API GRow();
 		IMGUI_API ~GRow();
-		vector<GCell*> Cells;
+		vector<GCell*>* Cells;
 		property<GRow, GTable*, READ_ONLY>* Table;
 		property<GRow, int, READ_ONLY>* Index;
 		IMGUI_API void Insert(GCell* poCell, int piIndex);
 		IMGUI_API void Add(GCell* poCell);
-		IMGUI_API void Remove(GCell* poCell);		
+		IMGUI_API void Remove(GCell* poCell);
+		IMGUI_API void ClearAll();
 	};
 }
 

@@ -11,6 +11,8 @@ namespace Grid
 
 	GRow::~GRow()
 	{
+		this->ClearAll();
+		this->setTable(nullptr);
 	}
 
 	GTable* GRow::getTable() const
@@ -23,17 +25,17 @@ namespace Grid
 		if (this->table != poTable)
 		{
 			this->table = poTable;
-			if (this->Cells.size() > 0)
+			if (this->Cells->size() > 0)
 			{
-				bool llShouldResetColumns = this->table && this->table->Columns.size() > 0;
+				bool llShouldResetColumns = this->table && this->table->Columns->size() > 0;
 				int liColIndex = 0;
-				for (vector<GCell*>::iterator loCell = this->Cells.begin(); loCell != this->Cells.end(); loCell++)
+				for (vector<GCell*>::iterator loCell = this->Cells->begin(); loCell != this->Cells->end(); loCell++)
 				{
 					if (llShouldResetColumns)
 					{
-						if (liColIndex < this->table->Columns.size())
+						if (liColIndex < this->table->Columns->size())
 						{
-							(*loCell)->setColumn(this->table->Columns[liColIndex]);
+							(*loCell)->setColumn((*(this->table->Columns))[liColIndex]);
 						}
 						else
 						{
@@ -59,6 +61,7 @@ namespace Grid
 	void GRow::Initial()
 	{
 		this->table = nullptr;
+		this->Cells = new vector<GCell*>();
 
 		this->Table = new property<GRow, GTable*, READ_ONLY>();
 		Table->setContainer(this);
@@ -73,7 +76,7 @@ namespace Grid
 	{
 		if (&poCell && (&this->Cells))
 		{
-			vector<GCell*> loCells = this->Cells;
+			vector<GCell*>& loCells = *(this->Cells);
 			int liSize = loCells.size();
 			if (piIndex<0 || piIndex>liSize)
 			{
@@ -104,7 +107,7 @@ namespace Grid
 			poCell->setRow(this);
 			if (this->table)
 			{
-				vector<GColumn*> loColumns = this->table->Columns;
+				vector<GColumn*>& loColumns = *(this->table->Columns);
 				if (loColumns.size() > 0 && loColumns.size() > piIndex)
 				{
 					poCell->setColumn(loColumns[piIndex]);
@@ -124,19 +127,32 @@ namespace Grid
 
 	void GRow::Remove(GCell* poCell)
 	{
-		for (vector<GCell*>::iterator loCell = this->Cells.begin(); loCell != this->Cells.end(); loCell++)
+		for (vector<GCell*>::iterator loCell = this->Cells->begin(); loCell != this->Cells->end(); loCell++)
 		{
 			if (*loCell == poCell)
 			{
-				this->Cells.erase(loCell);
-				poCell->setRow(nullptr);
-				poCell->setColumn(nullptr);
+				this->Cells->erase(loCell);
+				poCell->~GCell();
 				return;
 			}
 		}
+	}
 
-		poCell->setRow(nullptr);
-		poCell->setColumn(nullptr);
+	void GRow::ClearAll()
+	{
+		vector<GCell*>::iterator loCell = this->Cells->begin();
+		while (loCell != this->Cells->end())
+		{
+			GCell* loGCell = *loCell;
+			if (&loCell)
+			{
+				loGCell->~GCell();
+			}
+
+			loCell++;
+		}
+
+		this->Cells->clear();
 	}
 }
 

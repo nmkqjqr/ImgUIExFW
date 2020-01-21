@@ -44,13 +44,21 @@ namespace Test
 		string getTableName() const;
 
 		void Initial();
+
+		void LoadTable();
 	public:
 		GTableTest();
 		~GTableTest();
 		property<GTableTest, string, READ_WRITE>* Connection;
 		property<GTableTest, string, READ_WRITE>* TableName;
 		void ShowWindow();
+		void ShowTable();
 	};
+
+#ifndef CREATEROW
+#define CREATEROW
+	GRow* CreateRowBySOCIrow(const soci::row& poRow);
+#endif // !CREATEROW
 
 }
 

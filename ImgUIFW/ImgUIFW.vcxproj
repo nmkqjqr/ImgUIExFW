@@ -75,7 +75,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\lib\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)\lib\$(Platform)\$(ProjectName)\</IntDir>
-    <IncludePath>F:\VulkanSDK\1.1.130.0\Include\vulkan;F:\VulkanSDK\1.1.130.0\Include;D:\Cpp\GitHub\GLM\glm-0.9.9.6\glm;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-1.74;$(IncludePath)</IncludePath>
+    <IncludePath>F:\VulkanSDK\1.1.130.0\Include\vulkan;F:\VulkanSDK\1.1.130.0\Include;D:\Cpp\GitHub\GLM\glm-0.9.9.6\glm;D:\Cpp\GitHub\GLFW\glfw3.3.WIN32\include;D:\Cpp\GitHub\ImgUIExFW\Dear ImgUI\imgui-tables;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,7 +93,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;IMGUIFW_EXPORTS;IMGUI_API;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;IMGUIFW_EXPORTS;IMGUI_API;IMGUI_VERSION;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
@@ -164,14 +164,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\examples\imgui_impl_glfw.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\examples\imgui_impl_vulkan.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imconfig.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imgui.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imgui_internal.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imstb_rectpack.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imstb_textedit.h" />
-    <ClInclude Include="..\Dear ImgUI\imgui-1.74\imstb_truetype.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\examples\imgui_impl_glfw.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\examples\imgui_impl_vulkan.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imconfig.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imgui.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imgui_internal.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imstb_rectpack.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imstb_textedit.h" />
+    <ClInclude Include="..\Dear ImgUI\imgui-tables\imstb_truetype.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GCell.h" />
     <ClInclude Include="GColumn.h" />
@@ -181,12 +181,12 @@
     <ClInclude Include="Property.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\examples\imgui_impl_glfw.cpp" />
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\examples\imgui_impl_vulkan.cpp" />
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui.cpp" />
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_demo.cpp" />
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_draw.cpp" />
-    <ClCompile Include="..\Dear ImgUI\imgui-1.74\imgui_widgets.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\examples\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\examples\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\imgui.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\imgui_demo.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\imgui_draw.cpp" />
+    <ClCompile Include="..\Dear ImgUI\imgui-tables\imgui_widgets.cpp" />
     <ClCompile Include="GCell.cpp" />
     <ClCompile Include="GColumn.cpp" />
     <ClCompile Include="dllmain.cpp" />

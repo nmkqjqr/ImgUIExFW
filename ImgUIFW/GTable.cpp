@@ -12,13 +12,17 @@ namespace Grid
 
 	GTable::~GTable()
 	{
+		this->Rows->clear();
+		this->Columns->clear();
+		delete this->Rows;
+		delete this->Columns;
 	}
 
 	void GTable::Insert(GRow* poRow, int piIndex)
 	{
 		if (poRow)
 		{
-			vector<GRow*> loRows = this->Rows;
+			vector<GRow*>& loRows = *(this->Rows);
 			int liSize = loRows.size();
 			if (piIndex<0 || piIndex>liSize)
 			{
@@ -52,12 +56,12 @@ namespace Grid
 
 	void GTable::Remove(GRow* poRow)
 	{
-		for (vector<GRow*>::iterator loRow = this->Rows.begin(); loRow != this->Rows.end(); loRow++)
+		for (vector<GRow*>::iterator loRow = this->Rows->begin(); loRow != this->Rows->end(); loRow++)
 		{
 			if (*loRow == poRow)
 			{
-				this->Rows.erase(loRow);
-				poRow->setTable(nullptr);
+				this->Rows->erase(loRow);
+				poRow->~GRow();
 				return;
 			}
 		}
@@ -67,7 +71,7 @@ namespace Grid
 	{
 		if (poColumn)
 		{
-			vector<GColumn*> loColumns = this->Columns;
+			vector<GColumn*>& loColumns = *(this->Columns);
 			int liSize = loColumns.size();
 			if (piIndex<0 || piIndex>liSize)
 			{
@@ -101,12 +105,12 @@ namespace Grid
 
 	void GTable::Remove(GColumn* poColumn)
 	{
-		for (vector<GColumn*>::iterator loColomn = this->Columns.begin(); loColomn != this->Columns.end(); loColomn++)
+		for (vector<GColumn*>::iterator loColomn = this->Columns->begin(); loColomn != this->Columns->end(); loColomn++)
 		{
 			if (*loColomn == poColumn)
 			{
-				this->Columns.erase(loColomn);
-				poColumn->setTable(nullptr);
+				this->Columns->erase(loColomn);
+				poColumn->~GColumn();
 				return;
 			}
 		}
@@ -128,7 +132,27 @@ namespace Grid
 		Name->setContainer(this);
 		Name->setter(&GTable::setName);
 		Name->getter(&GTable::getName);
+
+		this->Rows = new vector<GRow*>();
+		this->Columns = new vector<GColumn*>();
 	}
 
+	void GTable::ClearAll()
+	{
+		for (vector<GRow*>::iterator loRow = this->Rows->begin(); loRow != this->Rows->end(); loRow++)
+		{
+			GRow* loTRow = *loRow;
+			loTRow->~GRow();
+		}
+		this->Rows->clear();
+
+
+		for (vector<GColumn*>::iterator loColumn = this->Columns->begin(); loColumn != this->Columns->end(); loColumn++)
+		{
+			GColumn* loGColumn = *loColumn;
+			loGColumn->~GColumn();
+		}
+		this->Columns->clear();
+	}
 }
 

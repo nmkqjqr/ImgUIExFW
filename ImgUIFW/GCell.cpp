@@ -14,10 +14,12 @@ namespace Grid
 
 	GCell::~GCell()
 	{
-		if (this->row)
-		{
-			this->row->Remove(this);
-		}
+		this->setRow(nullptr);
+		this->setColumn(nullptr);
+		delete this->Row;
+		delete this->Column;
+		delete	this->ContrastValue;
+		delete	this->Value;
 	}
 
 	void GCell::Initial(string const pcText)
